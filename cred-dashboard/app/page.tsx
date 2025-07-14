@@ -108,7 +108,7 @@ const CredDashboard = () => {
   return (
     <div
       className={`min-h-screen transition-colors duration-300 ${
-        darkMode ? "dark bg-gray-900" : "bg-gray-50"
+        darkMode ? "bg-gray-900" : "bg-gray-50"
       }`}
     >
       <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -119,10 +119,14 @@ const CredDashboard = () => {
           className="flex items-center justify-between mb-8"
         >
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+            <h1
+              className={`text-3xl font-bold ${
+                darkMode ? "text-gray-100" : "text-gray-900"
+              }`}
+            >
               CRED Garage
             </h1>
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className={`${darkMode ? "text-gray-200" : "text-gray-600"}`}>
               Your premium rewards dashboard
             </p>
           </div>
@@ -159,10 +163,14 @@ const CredDashboard = () => {
               transition={{ delay: 0.2 }}
               className="mb-6"
             >
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2
+                className={`text-2xl font-bold mb-2 ${
+                  darkMode ? "text-gray-100" : "text-gray-900"
+                }`}
+              >
                 Your Benefits
               </h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className={`${darkMode ? "text-gray-200" : "text-gray-600"}`}>
                 Exclusive rewards and offers just for you
               </p>
             </motion.div>
@@ -217,16 +225,32 @@ const CredDashboard = () => {
               className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-100 dark:border-gray-700"
             >
               <div className="flex items-center space-x-3">
-                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                  <div className="text-blue-600 dark:text-blue-400">
+                <div
+                  className={`p-2 rounded-lg ${
+                    darkMode ? "bg-blue-900/30" : "bg-blue-100"
+                  }`}
+                >
+                  <div
+                    className={`${
+                      darkMode ? "text-blue-300" : "text-blue-600"
+                    }`}
+                  >
                     {stat.icon}
                   </div>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                  <p
+                    className={`text-sm ${
+                      darkMode ? "text-gray-200" : "text-gray-600"
+                    }`}
+                  >
                     {stat.label}
                   </p>
-                  <p className="text-xl font-bold text-gray-900 dark:text-white">
+                  <p
+                    className={`text-xl font-bold ${
+                      darkMode ? "text-gray-100" : "text-gray-900"
+                    }`}
+                  >
                     {stat.value}
                   </p>
                 </div>
